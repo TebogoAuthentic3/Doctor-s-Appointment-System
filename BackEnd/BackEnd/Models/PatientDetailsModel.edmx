@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="AppoimtmentModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="PATIENTDETAILS">
+          <Key>
+            <PropertyRef Name="PATIENTID" />
+          </Key>
+          <Property Name="PATIENTID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FIRSTNAME" Type="nchar" MaxLength="50" />
+          <Property Name="LASTNAME" Type="nchar" MaxLength="50" />
+          <Property Name="EMAILADDRESS" Type="nchar" MaxLength="50" />
+          <Property Name="PASSWORD" Type="nchar" MaxLength="10" />
+          <Property Name="USERNAME" Type="nchar" MaxLength="50" />
+          <Property Name="CONTACT" Type="int" />
+          <Property Name="GENDER" Type="nchar" MaxLength="10" />
+          <Property Name="CATEGORY" Type="nvarchar" MaxLength="50" />
+          <Property Name="DATE" Type="nvarchar" MaxLength="50" />
+          <Property Name="DOB" Type="nvarchar" MaxLength="50" />
+          <Property Name="TIME" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="AppoimtmentModel1StoreContainer">
+          <EntitySet Name="PATIENTDETAILS" EntityType="Self.PATIENTDETAILS" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AppoimtmentModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="PATIENTDETAIL">
+          <Key>
+            <PropertyRef Name="PATIENTID" />
+          </Key>
+          <Property Name="PATIENTID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FIRSTNAME" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="LASTNAME" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="EMAILADDRESS" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="PASSWORD" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="USERNAME" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="CONTACT" Type="Int32" />
+          <Property Name="GENDER" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="CATEGORY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DATE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DOB" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TIME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="PatientDetailsEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="PATIENTDETAILS" EntityType="Self.PATIENTDETAIL" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AppoimtmentModel1StoreContainer" CdmEntityContainer="PatientDetailsEntities">
+          <EntitySetMapping Name="PATIENTDETAILS">
+            <EntityTypeMapping TypeName="AppoimtmentModel1.PATIENTDETAIL">
+              <MappingFragment StoreEntitySet="PATIENTDETAILS">
+                <ScalarProperty Name="PATIENTID" ColumnName="PATIENTID" />
+                <ScalarProperty Name="FIRSTNAME" ColumnName="FIRSTNAME" />
+                <ScalarProperty Name="LASTNAME" ColumnName="LASTNAME" />
+                <ScalarProperty Name="EMAILADDRESS" ColumnName="EMAILADDRESS" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="CONTACT" ColumnName="CONTACT" />
+                <ScalarProperty Name="GENDER" ColumnName="GENDER" />
+                <ScalarProperty Name="CATEGORY" ColumnName="CATEGORY" />
+                <ScalarProperty Name="DATE" ColumnName="DATE" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="TIME" ColumnName="TIME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,41 @@
+<div id="content" #content>    
+  <br>
+  <br>
+  <br>
+    <table class="table table-dark table-striped" id="contentToConvert">
+      <thead>
+        <tr>
+          <th>FIRST NAME</th>
+          <th>LAST NAME</th>
+          <th>USERNAME</th>
+          <th>EMAILADDRESS</th>
+          <th>CONTACT NO.</th>
+          <th>GENDER</th>
+          <th>DOB</th>
+          <th>CATEGORY</th>
+          <th>DATE</th>
+          <th>TIME</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let pat of patientDetails">
+        <tr>
+          <td>{{pat.FIRSTNAME}}</td>
+          <td>{{pat.LASTNAME}}</td>
+          <td>{{pat.USERNAME}}</td>
+          <td>{{pat.EMAILADDRESS}}</td>
+          <td>{{pat.CONTACT}}</td>
+          <td>{{pat.GENDER}}</td>
+          <td>{{pat.DOB}}</td>
+          <td>{{pat.CATEGORY}}</td>
+          <td>{{pat.DATE}}</td>
+          <td>{{pat.TIME}}</td>
+          <td>
+            <button type="button" class="btn btn-success" (click)="attend(pat)">Attend</button>
+          </td>
+          <!-- <td>
+            <button type="button" class="btn btn-danger" (click)="delete(pat)">Delete</button>
+          </td> -->
+        </tr>
+      </tbody>
+    </table>      
+</div>  

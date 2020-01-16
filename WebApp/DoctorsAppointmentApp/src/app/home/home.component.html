@@ -1,0 +1,200 @@
+<div class="modal" id="myModal1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body for registration -->
+      <div class="modal-body text-center">
+        <i class="fa fa-user-md fa-10x text-primary"></i>
+        <br> 
+        <br>
+        <form class="myform">
+          <div class=" row">   
+            <div class="col-lg-12 col-md-12 col-sm-12"> 
+              <div class="form-group"> 
+                <input type="text" [(ngModel)]="AdmName" name="username" class="form-control form-control-lg" placeholder="Username" required>
+              </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <div class="form-group"> 
+                <input type="password" minlength="6" [(ngModel)]="AdmPass" name="password" class="form-control form-control-lg btn-block" placeholder="Password" required>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="btn btn-outline-secondary btn-lg" style="width:100%" (click)="DoctorLogin()">Sign In</button>
+        </form> 
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="myModal3">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body for registration -->
+      <div class="modal-body text-center">
+        <i class="fa fa-user-plus fa-10x text-primary"></i>
+        <br> 
+        <br>
+        <h4>Personal Details</h4>
+        <form class="myform" #patientForm="ngForm" (ngSubmit)="register(patientForm)"> 
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <input class="form-control" name="FirstName" #FirstName="ngModel" [(ngModel)]="registerPatient.FIRSTNAME" placeholder="First Name" required>
+            </div>
+            <div class="form-group col-md-6">
+              <input class="form-control" name="LastName" #LastName="ngModel" [(ngModel)]="registerPatient.LASTNAME" placeholder="Last Name" required>
+            </div>
+            <div class="form-group col-md-6">
+              <input class="form-control" name="UserName" #UserName="ngModel" [(ngModel)]="registerPatient.USERNAME" placeholder="User Name" required>
+            </div>
+            <div class="form-group col-md-6">
+              <input class="form-control" name="EmailAddress" #EmailAddress="ngModel" [(ngModel)]="registerPatient.EMAILADDRESS" placeholder="Email Address" required>
+            </div>
+            <div class="form-group col-md-6">
+              <input class="form-control" type="password" name="Password" #Password="ngModel" [(ngModel)]="registerPatient.PASSWORD" placeholder="Password" required>
+            </div>
+            <div class="form-group col-md-6">
+              <input class="form-control" name="Contact" #Contact="ngModel" [(ngModel)]="registerPatient.CONTACT" placeholder="Contact" required>
+            </div>
+            <div class="form-group col-md-6">
+              <input class="form-control" name="Gender" #Gender="ngModel" [(ngModel)]="registerPatient.GENDER" placeholder="Gender" required>
+            </div>
+            <div class="form-group col-md-6">
+              <input class="form-control" name="dob" #dob="ngModel" [(ngModel)]="registerPatient.DOB" placeholder="Date of Birth" required>
+            </div>
+          </div>
+          <h4>Booking Details</h4>  
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <input class="form-control" name="Category" #Category="ngModel" [(ngModel)]="registerPatient.CATEGORY" placeholder="Category" required>
+            </div>
+            <div class="form-group col-md-6">
+              <input class="form-control" name="Date" #Date="ngModel" [(ngModel)]="registerPatient.DATE" placeholder="Date YYYY/MM/DD" required>
+            </div>
+            <div class="form-group col-md-12">
+              <input class="form-control" name="Time" #Time="ngModel" [(ngModel)]="registerPatient.TIME" placeholder="Time HH:MM" required>
+            </div>          
+          </div>
+          <button type="submit" class="btn btn-outline-primary btn-lg" style="width:100%">Book Appointment</button>
+        </form> 
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="myModal2">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body for registration -->
+      <div class="modal-body text-center">
+        <i class="fa fa-user fa-10x text-primary"></i>
+        <br> 
+        <br>
+        <form class="myform">
+          <div class=" row">   
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <div class="form-group"> 
+                <input type="text" [(ngModel)]="patName" name="username" class="form-control form-control-lg" placeholder="Username" required>
+              </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <div class="form-group"> 
+                <input type="password" [(ngModel)]="patPass" minlength="6" name="password" class="form-control form-control-lg btn-block" placeholder="Password" required>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="btn btn-outline-info btn-lg" style="width:100%" (click)="PatientLogin()">Sign In</button>
+        </form> 
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="jumbotron">
+  <div class="page-header text-primary" style="text-align: center;">
+    <h1>DOCTOR'S APPOINTMENT SYSTEM</h1>
+  </div>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+      <li data-target="#myCarousel" data-slide-to="4"></li>
+      <li data-target="#myCarousel" data-slide-to="5"></li>
+      <li data-target="#myCarousel" data-slide-to="6"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="assets\images\doc7.jpg" alt="Los Angeles" style="width:100%;">
+      </div>
+
+      <div class="item">
+        <img src="assets\images\doc2.jpg" alt="Chicago" style="width:100%;">
+      </div>
+    
+      <div class="item">
+        <img src="assets\images\doc3.jpg" alt="New york" style="width:100%;">
+      </div>
+
+      <div class="item">
+        <img src="assets\images\doc4.jpg" alt="Chicago" style="width:100%;">
+      </div>
+    
+      <div class="item">
+        <img src="assets\images\doc5.jpg" alt="New york" style="width:100%;">
+      </div>
+
+      <div class="item">
+        <img src="assets\images\doc6.jpg" alt="Chicago" style="width:100%;">
+      </div>
+    
+      <div class="item">
+        <img src="assets\images\doc1.png" alt="New york" style="width:100%;">
+      </div>
+
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+  <br>
+  <div class="">       
+    <div class="btn-group col-lg-6">
+      <button type="button" class="btn btn-info btn-lg" style="width:100%" data-toggle="modal" data-target="#myModal3">Patient Sign Up</button><br/>
+    </div>
+  
+    <div class="btn-group col-lg-6">
+      <button type="button" class="btn btn-secondary btn-lg" style="width:100%" data-toggle="modal" data-target="#myModal1">Doctor</button><br/>
+    </div>
+  </div>
+</div>
+
+
